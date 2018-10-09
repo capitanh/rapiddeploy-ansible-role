@@ -1,3 +1,5 @@
+dependencies:
+
 galaxy_info:
   author: Luis Novo
   description: This role installs rapiddeploy for development purposes
