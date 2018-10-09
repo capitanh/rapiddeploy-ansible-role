@@ -1,0 +1,13 @@
+[Unit]
+Description=rapid deploy service
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/usr/midvision/bin/start-web-app.sh
+ExecStop=/usr/midvision/bin/stop-web-app.sh
+User={{rapiddeploy_user}}
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target

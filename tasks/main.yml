@@ -1,0 +1,33 @@
+---
+- name: Create service user
+  user:
+    name: "{{rapiddeploy_user}}"
+    createhome: no
+    system: yes
+
+- name: Download installer
+  unarchive:
+    src: http://www.download.midvision.com/content/sites/Community_release/rapiddeploy-web-app-lnx64.zip
+    dest: /usr
+    remote_src: yes
+    creates: /usr/midvision
+    owner: "{{rapiddeploy_user}}"
+    group: "{{rapiddeploy_user}}"
+
+- name: Copy service template
+  template:
+    src: rapiddeploy.service
+    dest: /usr/lib/systemd/system
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Enable systemd rapiddeploy service
+  service:
+    name: rapiddeploy
+    enabled: yes
+
+- name: Start rapiddeploy service
+  service:
+    name: rapiddeploy
+    state: started
