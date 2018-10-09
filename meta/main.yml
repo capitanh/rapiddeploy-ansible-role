@@ -1,5 +1,6 @@
 ---
-dependencies: []
+dependencies:
+  - capitanh
 
 galaxy_info:
   author: Luis Novo
