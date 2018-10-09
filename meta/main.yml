@@ -1,8 +1,9 @@
 ---
+dependencies: []
+
 galaxy_info:
   author: Luis Novo
   description: This role installs rapiddeploy for development purposes
-  company:
   license: "Simplified BSD License"
   min_ansible_version: 2.3.2.0
   platforms:
@@ -10,8 +11,9 @@ galaxy_info:
       versions:
         - 6
         - 7
+    - name: Ubuntu
+      versions:
+        - all
   galaxy_tags:
     - development
     - rapiddeploy
-
-dependencies: []
