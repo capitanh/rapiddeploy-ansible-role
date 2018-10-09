@@ -14,5 +14,4 @@ galaxy_info:
     - development
     - rapiddeploy
 
-  dependencies:
-    - capitanh.oraclejdk
+dependencies: []
